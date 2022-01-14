@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-static-webapp": "expo build:web"
+    "build-static-webapp": "expo build:web",
+    "chromatic": "npx chromatic --project-token=733259b60612"
   },
   "author": "",
   "license": "ISC",
