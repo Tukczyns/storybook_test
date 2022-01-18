@@ -6,7 +6,7 @@ import { ButtonProps } from "./Button.types"
 import Theme from '../theme/theme';
 
 export default {
-    title: 'Komunikuje/Button',
+    title: 'Generic/Button',
     component: Button,
     argTypes: {
         text: {

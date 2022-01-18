@@ -8,7 +8,6 @@ export const AccordionHeadline = styled.div<{ isOpen: boolean }>`
     width: 100%;
     padding: 14px 20px;
     background: linear-gradient(to right, #ff512f, #DD2476);
-    font-family: sans-serif;
     font-weight: 700;
     color: #fff;
     cursor: pointer;
@@ -29,5 +28,4 @@ export const AccordionContent = styled.div<{ isOpen: boolean }>`
     max-height: ${props => props.isOpen ? '20rem' : '0'};
     padding: ${props => props.isOpen ? '20px 20px' : '0 20px'};
     transition: all .3s ease-in-out;
-    font-family: sans-serif;
 `

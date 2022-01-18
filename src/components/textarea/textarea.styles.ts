@@ -1,14 +1,14 @@
-import { Field } from 'formik'
-import styled from 'styled-components'
-import { InputProps } from './Input.types'
+import styled from "styled-components";
 
-export const StyledInputContainer = styled.div`
+export const TextareaContainer = styled.div`
     position: relative;
     width: 100%;
     margin: 5px 0;
 `
 
-export const StyledInput = styled(Field) <InputProps>`
+export const TextareaStyled = styled.textarea`
+    resize: none;
+    padding: 10px;
     width: 100%;
     height: 100%;
     padding: 12px 20px;
@@ -30,9 +30,9 @@ export const StyledInput = styled(Field) <InputProps>`
     }
 `
 
-export const StyledLabel = styled.label`
+export const StyledTextareaLabel = styled.label`
     position: absolute;
-    top: 50%;
+    top: 24px;
     left: 18px;
     padding: 0 3px;
     font-size: 18px;

@@ -3,7 +3,7 @@ import Accordion from './accordion'
 import AccordionItem from './accordion_item/accordion_item'
 
 export default {
-    title: 'Komunikuje/Accordion',
+    title: 'Generic/Accordion',
     component: Accordion,
     // subcomponents: { AccordionItem },
     argTypes: {

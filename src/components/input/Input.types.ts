@@ -1,6 +1,5 @@
 export interface InputProps {
+    name: string,
     label?: string,
-    value?: string,
-    setValue?: (arg: string) => void,
-    placeholderOnly?: boolean
+    type?: 'text' | 'password' | 'number'
 }
