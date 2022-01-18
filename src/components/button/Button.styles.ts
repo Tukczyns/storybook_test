@@ -12,8 +12,8 @@ export const StyledButton = styled.button<ButtonProps>`
     border-radius: 100px;
     display: inline-block;
     padding: ${props => props.size === "small" ? "7px 25px 7px" : (props.size === "medium" ? "9px 30px 9px" : "14px 30px 14px")};
-    color: ${props => props.primary ? "#fff" : "#FF512F"};
-    background: ${props => props.primary ? 'linear-gradient(to right, #ff512f, #DD2476)' : "#f2f2f2"};
+    color: ${props => props.primary ? "#fff" : ({ theme }) => theme.colors.light};
+    background: ${(props) => props.primary ? ({ theme }) => theme.colors.gradient : '#f6f6f6'};
     opacity: ${props => props.disabled ? 0.5 : 1};
     /* &:hover {
       background-color: ${props => props.primary ? "#55bd90" : "#6bedb5"};

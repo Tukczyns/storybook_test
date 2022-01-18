@@ -7,16 +7,16 @@ export const AccordionContainer = styled.div`
 export const AccordionHeadline = styled.div<{ isOpen: boolean }>`
     width: 100%;
     padding: 14px 20px;
-    background: linear-gradient(to right, #ff512f, #DD2476);
+    background: ${({theme}) => theme.colors.gradient};
     font-weight: 700;
     color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
 
-    & img{
+    & svg{
+        font-size: 22px;
         margin-right: 1rem;
-        margin-top: -4px;
         transition: all .3s;
         transform: ${props => props.isOpen ? 'rotate(180deg)' : 'rotate(0)'};
     }

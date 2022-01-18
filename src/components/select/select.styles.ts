@@ -8,7 +8,7 @@ export const SelectContainer = styled.div`
     margin: 5px 0;
 `
 
-export const SelectActiveItem = styled.div`
+export const SelectActiveItem = styled.div<{ isOpen: boolean }>`
     width: 100%;
     height: 100%;
     padding: 0 8px;
@@ -16,28 +16,36 @@ export const SelectActiveItem = styled.div`
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    background: linear-gradient(to right, #ff512f, #DD2476);
+    background: ${({ theme }) => theme.colors.gradient};
     color: white;
     font-weight: 900;
     cursor: pointer;
+
+    & svg{
+        font-size: 22px;
+        transition: all .3s;
+        transform: ${props => props.isOpen ? 'rotate(180deg)' : 'rotate(0)'};
+    }
 `
 
 export const SelectItemList = styled.div<{ isOpen: boolean, count: number }>`
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     position: absolute;
     background-color: white;
     left: 0;
     top: 100%;
     z-index: 20;
-    transition: all .2s;
-    max-height: ${props => props.isOpen ? 'calc(' + props.count + ' * 50px)' : '0'};
+    transition: max-height .2s;
+    max-height: ${props => props.isOpen ? 'calc(' + (props.count <= 5 ? props.count : 5) + ' * 43px)' : '0'};
 `
 
 export const SelectItem = styled.div`
     width: 100%;
     height: 40px;
-    background: linear-gradient(to right, #ff512f90, #DD247690);
+    background: ${({ theme }) => theme.colors.gradient};
+    opacity: .8;
     color: white;
     font-weight: 900;
     padding: 0 8px;

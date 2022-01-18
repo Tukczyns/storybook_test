@@ -26,7 +26,7 @@ export const FormExample: ComponentStory<typeof Form> = (args) => (
     >
         <Input name="text" label='Text' />
         <Textarea name="textarea" />
-        <Select name='select' />
+        <Select name='select' options={['Option 1', 'Option 2', 'Option 3', 'Option 4']} />
         <FileUpload name="file" />
         <Datepicker name="date" />
         <Checkbox name="agreement" content='Wyrażam zgodę na <a href="#">zgodę</a>' />

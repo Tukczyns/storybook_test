@@ -2,9 +2,9 @@ import { Field, useField, useFormikContext } from "formik";
 import React, { FC, useState } from "react";
 import { SelectActiveItem, SelectContainer, SelectItem, SelectItemList } from "./select.styles";
 import { SelectProps } from "./select.types";
-import arrow_down from '../../images/arrow-down.svg'
+import { IoIosArrowDown } from 'react-icons/io'
 
-const Select: FC<SelectProps> = ({ name }) => {
+const Select: FC<SelectProps> = ({ name, options }) => {
     const [openSelect, toggleSelect] = useState(false)
     const [selectedValue, setSelectedValue] = useState('test1')
 
@@ -20,15 +20,15 @@ const Select: FC<SelectProps> = ({ name }) => {
     return (
         <SelectContainer {...field}>
             {/* active item */}
-            <SelectActiveItem onClick={() => toggleSelect(!openSelect)}>
+            <SelectActiveItem isOpen={openSelect} onClick={() => toggleSelect(!openSelect)}>
                 {selectedValue}
-                <img src={arrow_down} />
+                <IoIosArrowDown />
             </SelectActiveItem>
             {/* item list */}
-            <SelectItemList isOpen={openSelect} count={3}>
-                <SelectItem onClick={() => changeValue('test1')}>test1</SelectItem>
-                <SelectItem onClick={() => changeValue('test2')}>test2</SelectItem>
-                <SelectItem onClick={() => changeValue('test3')}>test3</SelectItem>
+            <SelectItemList isOpen={openSelect} count={options?.length || 0}>
+                {options?.map(o => (
+                    <SelectItem onClick={() => changeValue(o)}>{o}</SelectItem>
+                ))}
             </SelectItemList>
         </SelectContainer >
     )

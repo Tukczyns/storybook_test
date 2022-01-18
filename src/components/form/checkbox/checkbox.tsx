@@ -9,7 +9,9 @@ const Checkbox: FC<CheckboxProps> = ({ name, content }) => {
         <CheckboxContainer>
             <CheckboxStyled type="checkbox" name={name} id={name} />
             <label htmlFor={name}>
-                <BsCheckLg />
+                <div>
+                    <BsCheckLg />
+                </div>
             </label>
             <CheckboxText dangerouslySetInnerHTML={{ __html: content }}></CheckboxText>
         </CheckboxContainer>

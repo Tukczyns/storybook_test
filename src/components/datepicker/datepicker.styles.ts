@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DatepickerButton = styled.button`
-    background: linear-gradient(to right, #ff512f, #DD2476);
+    background: ${({ theme }) => theme.colors.gradient};
     color: white;
     font-weight: 900;
     padding: 5px 10px;

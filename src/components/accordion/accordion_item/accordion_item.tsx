@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { AccordionContainer, AccordionContent, AccordionHeadline } from "./accordion_item.styles";
 import { AccordionItemProps } from "./accordion_item.types";
-import arrow_down from '../../../images/arrow-down.svg'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const AccordionItem: FC<AccordionItemProps> = ({ headline, content, allowMultiple, activeIndex, setActiveIndex, index }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +20,7 @@ const AccordionItem: FC<AccordionItemProps> = ({ headline, content, allowMultipl
     return (
         <AccordionContainer>
             <AccordionHeadline isOpen={isOpen} onClick={accordionClicked}>
-                <img src={arrow_down} /> {headline}
+                <IoIosArrowDown /> {headline}
             </AccordionHeadline>
             <AccordionContent isOpen={isOpen}>
                 {content}

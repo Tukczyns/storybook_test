@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FileUploadContainer = styled.div`
     background: white;
     width: 350px;
-    border: 3px dashed #ff512f;
+    border: 3px dashed ${({ theme }) => theme.colors.light};
     padding: 10px 20px;
     cursor: pointer;
     box-sizing: border-box;
@@ -22,10 +22,11 @@ export const DNDMessage = styled.div`
         text-align: center;
         font-size: 20px;
         margin-bottom: 10px;
+        color: ${({ theme }) => theme.colors.dark};
     }
 
     & svg{
         font-size: 35px;
-        color: #ff512f;
+        color: ${({ theme }) => theme.colors.light};
     }
 `

@@ -16,25 +16,34 @@ export const CheckboxStyled = styled(Field)`
         flex-shrink: 0;
         margin-right: 1rem;
         color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 16px;
         transition: all .2s;
         cursor: pointer;
-        border: 2px solid #ff512f;
+        padding: 2px;
+        background: ${({ theme }) => theme.colors.gradient};
 
         & svg{
             opacity: 0;
             transition: all .2s;
         }
+
+        & div{
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &:checked + label{
-        background: linear-gradient(to right, #ff512f, #DD2476);
-
         & svg{
             opacity: 1;
+        }
+        
+        & div{
+            background: ${({ theme }) => theme.colors.gradient};
         }
     }
 `
@@ -44,7 +53,7 @@ export const CheckboxText = styled.span`
     margin-top: 4px;
 
     & a{
-        color: #ff512f;
+        color: ${({ theme }) => theme.colors.light};
         text-decoration: none;
         font-weight: 700;
     }
