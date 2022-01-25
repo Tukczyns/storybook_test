@@ -3,7 +3,7 @@ import { AccordionContainer, AccordionContent, AccordionHeadline } from "./accor
 import { AccordionItemProps } from "./accordion_item.types";
 import { IoIosArrowDown } from 'react-icons/io'
 
-const AccordionItem: FC<AccordionItemProps> = ({ headline, content, allowMultiple, activeIndex, setActiveIndex, index }) => {
+const AccordionItem: FC<AccordionItemProps> = ({ children, headline, content, allowMultiple, activeIndex, setActiveIndex, index }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const accordionClicked = () => {
@@ -23,7 +23,7 @@ const AccordionItem: FC<AccordionItemProps> = ({ headline, content, allowMultipl
                 <IoIosArrowDown /> {headline}
             </AccordionHeadline>
             <AccordionContent isOpen={isOpen}>
-                {content}
+                {children ? children : content}
             </AccordionContent>
         </AccordionContainer>
     )

@@ -7,5 +7,5 @@ export enum ColorBoxType {
 
 export interface ColorBoxesProps {
     text?: string,
-    type?: ColorBoxType
+    type?: 'PRIMARY' | 'WARNING' | 'DANGER' | 'SUCCESS'
 }

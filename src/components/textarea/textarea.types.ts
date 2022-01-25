@@ -1,3 +1,6 @@
 export interface TextAreaProps {
-    name: string
+    name: string,
+    label?: string,
+    value?: string,
+    readonly?: boolean
 }

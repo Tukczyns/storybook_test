@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const SelectContainer = styled.div`
-    max-width: 500px;
+    max-width: 100%;
     height: 50px;
     position: relative;
-    z-index: 1;
     margin: 5px 0;
 `
 

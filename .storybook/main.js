@@ -6,6 +6,7 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "storybook-addon-styled-component-theme/dist/preset"
+    "storybook-addon-styled-component-theme/dist/preset",
+    'storybook-dark-mode'
   ]
 }

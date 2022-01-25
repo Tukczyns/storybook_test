@@ -26,3 +26,17 @@ FloatingLabel.args = {
     name: 'Placeholder'
 }
 
+export const DefaultValue = Template.bind({})
+DefaultValue.args = {
+    label: "Placeholder",
+    name: 'Placeholder',
+    value: 'Default value'
+}
+
+export const ReadOnly = Template.bind({})
+ReadOnly.args = {
+    label: "Placeholder",
+    name: 'Placeholder',
+    value: 'Default value',
+    readonly: true
+}

@@ -8,7 +8,7 @@ export default {
     component: Datepicker
 } as Meta<typeof Datepicker>
 
-const Template: Story<DatepickerProps> = (args) => <Formik initialValues={{}} onSubmit={() => { }}><Datepicker {...args} /></Formik>
+const Template: Story<DatepickerProps> = (args) => <Formik initialValues={{ 'date': new Date() }} onSubmit={() => { }}><Datepicker {...args} /></Formik>
 
 export const Primary = Template.bind({})
 Primary.args = {

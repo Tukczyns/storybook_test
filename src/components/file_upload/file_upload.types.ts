@@ -1,3 +1,3 @@
 export interface FileUploadProps {
-    name: string
+    name: string,
 }

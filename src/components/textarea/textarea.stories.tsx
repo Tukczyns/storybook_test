@@ -13,5 +13,21 @@ const Template: Story<TextAreaProps> = (args) => <Formik initialValues={{}} onSu
 
 export const Primary = Template.bind({})
 Primary.args = {
-    name: 'test'
+    name: 'test',
+    label: 'Label'
+}
+
+export const DefaultValue = Template.bind({})
+DefaultValue.args = {
+    name: 'test',
+    label: 'Default value',
+    value: 'Default value'
+}
+
+export const ReadOnly = Template.bind({})
+ReadOnly.args = {
+    name: 'test',
+    label: 'Read only',
+    value: 'Some text here',
+    readonly: true
 }

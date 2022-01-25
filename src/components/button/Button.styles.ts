@@ -5,13 +5,14 @@ export const StyledButton = styled.button<ButtonProps>`
     border: 0;
     line-height: 1;
     margin: 5px 0;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     font-weight: 700;
     font-weight: bold;
     border-radius: 100px;
     display: inline-block;
-    padding: ${props => props.size === "small" ? "7px 25px 7px" : (props.size === "medium" ? "9px 30px 9px" : "14px 30px 14px")};
+    min-width: 170px;
+    padding: ${props => props.size === "small" ? "7px 25px 7px" : (props.size === "medium" ? "9px 30px 9px" : "11px 40px 10px")};
     color: ${props => props.primary ? "#fff" : ({ theme }) => theme.colors.light};
     background: ${(props) => props.primary ? ({ theme }) => theme.colors.gradient : '#f6f6f6'};
     opacity: ${props => props.disabled ? 0.5 : 1};

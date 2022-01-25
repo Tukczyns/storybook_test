@@ -18,7 +18,14 @@ export default {
 export const AccordionWithItems: ComponentStory<typeof Accordion> = (args) => (
     <Accordion {...args}>
         <AccordionItem headline='Headline' content='Content' />
-        <AccordionItem headline='Headline 2' content='Content 2' />
+        <AccordionItem headline='Headline 2'>
+            <div>
+                <p style={{ fontSize: 24, fontWeight: 900, margin: 0 }}>Test z childrenami</p>
+                <div style={{ fontSize: 18, background: 'rgba(0,0,0,.5)', maxWidth: 20 }}>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi accusamus numquam impedit pariatur aliquam eum amet quibusdam cupiditate, debitis repudiandae perspiciatis explicabo voluptate expedita iusto, ex, dolorum beatae? Ea, quo.
+                </div>
+            </div>
+        </AccordionItem>
         <AccordionItem headline='Headline 2' content='Content 2' />
         <AccordionItem headline='Headline 2' content='Content 2' />
     </Accordion>

@@ -6,13 +6,15 @@ const themes = [{
   colors: {
     light: '#2980b9',
     dark: '#2c3e50',
-    gradient: 'linear-gradient(to left, #2980b9, #2c3e50)'
+    gradient: 'linear-gradient(to left, #2980b9, #2c3e50)',
+    red: '#ff0033'
   }
 }, {
   colors: {
     light: '#414345',
     dark: '#232526',
-    gradient: 'linear-gradient(to right, #232526, #414345);'
+    gradient: 'linear-gradient(to right, #232526, #414345)',
+    red: '#ff0033'
   }
 }];
 addDecorator(withThemesProvider(themes), ThemeProvider);

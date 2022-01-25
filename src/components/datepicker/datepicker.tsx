@@ -1,10 +1,11 @@
 import React, { FC, forwardRef, useState } from "react";
 import { DatepickerProps } from "./datepicker.types";
 import DatePicker from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css";
 import { DatepickerButton, DatepickerIcon } from "./datepicker.styles";
 import { IoIosCalendar } from "react-icons/io";
 import { useField, useFormikContext } from "formik";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const Datepicker: FC<DatepickerProps> = ({ name }) => {
     const { setFieldValue } = useFormikContext()
@@ -18,7 +19,7 @@ const Datepicker: FC<DatepickerProps> = ({ name }) => {
     }
 
     const ExampleCustomInput = forwardRef<any, any>(({ value, onClick }, ref) => (
-        <DatepickerButton onClick={onClick} ref={ref}>
+        <DatepickerButton type="button" onClick={onClick} ref={ref}>
             {value}
             <DatepickerIcon >
                 <IoIosCalendar />

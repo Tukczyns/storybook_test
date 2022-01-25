@@ -25,7 +25,7 @@ export const AccordionHeadline = styled.div<{ isOpen: boolean }>`
 export const AccordionContent = styled.div<{ isOpen: boolean }>`
     width: 100%;
     overflow: hidden;
-    max-height: ${props => props.isOpen ? '20rem' : '0'};
+    max-height: ${props => props.isOpen ? '140rem' : '0'};
     padding: ${props => props.isOpen ? '20px 20px' : '0 20px'};
     transition: all .3s ease-in-out;
 `

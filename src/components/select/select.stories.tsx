@@ -8,7 +8,12 @@ export default {
     component: Select
 } as Meta<typeof Select>
 
-const Template: Story<SelectProps> = (args) => <Formik initialValues={{}} onSubmit={() => { }}><Select {...args} /></Formik>
+const Template: Story<SelectProps> = (args) => <Formik initialValues={{}} onSubmit={() => { }}>
+    <div>
+        <Select {...args} />
+        <Select {...args} />
+    </div>
+</Formik>
 
 export const Primary = Template.bind({})
 Primary.args = {
