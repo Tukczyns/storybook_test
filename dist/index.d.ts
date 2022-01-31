@@ -15,7 +15,12 @@ declare const Button: FC<ButtonProps>;
 interface InputProps {
     name: string;
     label?: string;
-    type?: 'text' | 'password' | 'number';
+    pattern?: string;
+    max?: number;
+    min?: number;
+    type?: 'text' | 'password' | 'number' | 'email';
+    value?: string;
+    readonly?: boolean;
 }
 
 declare const Input: FC<InputProps>;
@@ -47,19 +52,16 @@ declare const Select: FC<SelectProps>;
 
 interface TextAreaProps {
     name: string;
+    label?: string;
+    value?: string;
+    readonly?: boolean;
 }
 
 declare const Textarea: FC<TextAreaProps>;
 
-declare enum ColorBoxType {
-    PRIMARY = "PRIMARY",
-    WARNING = "WARNING",
-    DANGER = "DANGER",
-    SUCCESS = "SUCCESS"
-}
 interface ColorBoxesProps {
     text?: string;
-    type?: ColorBoxType;
+    type?: 'PRIMARY' | 'WARNING' | 'DANGER' | 'SUCCESS';
 }
 
 declare const ColorBoxes: FC<ColorBoxesProps>;
@@ -79,6 +81,7 @@ declare const FileUpload: FC<FileUploadProps>;
 interface FormProps {
     initialValues: Object;
     onSubmit: (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => void | Promise<any>;
+    validationSchema?: any | (() => any);
 }
 
 declare const Form: FC<FormProps>;

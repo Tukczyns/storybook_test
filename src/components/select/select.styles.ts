@@ -7,7 +7,7 @@ export const SelectContainer = styled.div`
     margin: 5px 0;
 `
 
-export const SelectActiveItem = styled.div<{ isOpen: boolean }>`
+export const SelectActiveItem = styled.div<{ isOpen: boolean, floating: boolean }>`
     width: 100%;
     height: 100%;
     padding: 0 8px;
@@ -15,8 +15,9 @@ export const SelectActiveItem = styled.div<{ isOpen: boolean }>`
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    background: ${({ theme }) => theme.colors.gradient};
-    color: white;
+    background: ${(props) => props.floating ? '#fff' : '#e2e2e2'};
+    border: 1px solid #e2e2e2;
+    color: ${({ theme }) => theme.colors.dark};
     font-weight: 900;
     cursor: pointer;
 
@@ -43,13 +44,31 @@ export const SelectItemList = styled.div<{ isOpen: boolean, count: number }>`
 export const SelectItem = styled.div`
     width: 100%;
     height: 40px;
-    background: ${({ theme }) => theme.colors.gradient};
-    opacity: .8;
-    color: white;
+    background: #e2e2e2;
+    color: ${({ theme }) => theme.colors.dark};
     font-weight: 900;
     padding: 0 8px;
     display: flex;
     align-items: center;
     margin-bottom: 1px;
     cursor: pointer;
+    transition: all .2s;
+
+    &:hover{
+        background: #f2f2f2;
+    }
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+`
+
+export const SelectLabel = styled.div<{ floating: boolean }>`
+    position: absolute;
+    left: 5px;
+    padding: 2px 5px;
+    transition: all .2s;
+    top: ${(props) => props.floating ? '0' : '50%'};
+    background: ${(props) => props.floating ? '#fff' : '#e2e2e2'};
+    transform: translateY(-50%);
 `

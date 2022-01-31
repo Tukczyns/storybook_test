@@ -18,8 +18,19 @@ const Template: Story<SelectProps> = (args) => <Formik initialValues={{}} onSubm
 export const Primary = Template.bind({})
 Primary.args = {
     name: 'select',
+    label: "Placeholder",
     options: [
-        'Option 1',
-        'Option 2'
+        {
+            key: 'value_1',
+            value: 'Wartość 1'
+        },
+        {
+            key: 'value_2',
+            value: 'Wartość 2'
+        },
+        {
+            key: 'value_3',
+            value: 'Wartość 3'
+        },
     ]
 }
