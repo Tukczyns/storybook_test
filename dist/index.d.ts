@@ -45,7 +45,11 @@ declare const AccordionItem: FC<AccordionItemProps>;
 
 interface SelectProps {
     name: string;
-    options?: string[];
+    options?: {
+        key: string;
+        value: string;
+    }[];
+    label?: string;
 }
 
 declare const Select: FC<SelectProps>;

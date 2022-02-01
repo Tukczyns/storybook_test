@@ -1,4 +1,8 @@
 export interface SelectProps {
     name: string;
-    options?: string[];
+    options?: {
+        key: string;
+        value: string;
+    }[];
+    label?: string;
 }

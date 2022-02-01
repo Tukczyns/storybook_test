@@ -42,6 +42,14 @@ Primary.args = {
     text: 'Primary',
 };
 
+export const Loading = Template.bind({})
+Loading.args = {
+    primary: true,
+    disabled: false,
+    text: 'Loading',
+    loading: true
+}
+
 export const Secondary = Template.bind({});
 Secondary.args = {
     primary: false,

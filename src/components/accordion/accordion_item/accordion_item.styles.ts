@@ -7,7 +7,7 @@ export const AccordionContainer = styled.div`
 export const AccordionHeadline = styled.div<{ isOpen: boolean }>`
     width: 100%;
     padding: 14px 20px;
-    background: ${({theme}) => theme.colors.gradient};
+    background: ${({theme}) => theme.colors.light};
     font-weight: 700;
     color: #fff;
     cursor: pointer;
@@ -28,4 +28,5 @@ export const AccordionContent = styled.div<{ isOpen: boolean }>`
     max-height: ${props => props.isOpen ? '140rem' : '0'};
     padding: ${props => props.isOpen ? '20px 20px' : '0 20px'};
     transition: all .3s ease-in-out;
+    background-color: white;
 `

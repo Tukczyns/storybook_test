@@ -12,5 +12,13 @@ const Template: Story<DatepickerProps> = (args) => <Formik initialValues={{ 'dat
 
 export const Primary = Template.bind({})
 Primary.args = {
-    name: 'date'
+    name: 'date',
+    label: "Data",
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+    name: 'date',
+    label: "Data",
+    disabled: true
 }
