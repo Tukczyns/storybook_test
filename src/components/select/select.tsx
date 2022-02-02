@@ -1,5 +1,5 @@
 import { Field, useField, useFormikContext } from "formik";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { SelectActiveItem, SelectContainer, SelectItem, SelectItemList, SelectLabel } from "./select.styles";
 import { SelectProps } from "./select.types";
 import { IoIosArrowDown } from 'react-icons/io'
@@ -10,6 +10,14 @@ const Select: FC<SelectProps> = ({ name, options, label }) => {
 
     const { setFieldValue } = useFormikContext()
     const [field] = useField(name)
+
+    useEffect(() => {
+        if (options && field.value) {
+            options.forEach(o => {
+                if (o.key === field.value) setSelectedValue(o.value)
+            })
+        }
+    }, [])
 
     const changeValue = (val: string, key: string) => {
         toggleSelect(false)

@@ -3,6 +3,7 @@ import { FormikValues, FormikHelpers } from 'formik';
 
 interface ButtonProps {
     text?: string;
+    loading?: boolean;
     type?: 'button' | 'submit';
     primary?: boolean;
     disabled?: boolean;
@@ -50,6 +51,7 @@ interface SelectProps {
         value: string;
     }[];
     label?: string;
+    initialValue?: string;
 }
 
 declare const Select: FC<SelectProps>;
@@ -72,6 +74,8 @@ declare const ColorBoxes: FC<ColorBoxesProps>;
 
 interface DatepickerProps {
     name: string;
+    disabled?: boolean;
+    label?: string;
 }
 
 declare const Datepicker: FC<DatepickerProps>;

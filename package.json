@@ -1,6 +1,6 @@
 {
   "name": "@tukczyns/ui_library",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Ui components for komunikuje project. i.e. inputs, buttons, selects",
   "main": "dist/cjs/index",
   "module": "dist/esm/index",

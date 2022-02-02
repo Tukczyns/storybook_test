@@ -8,9 +8,8 @@ export default {
     component: Select
 } as Meta<typeof Select>
 
-const Template: Story<SelectProps> = (args) => <Formik initialValues={{}} onSubmit={() => { }}>
+const Template: Story<SelectProps> = (args) => <Formik initialValues={{ select: 'value_2' }} onSubmit={() => { }}>
     <div>
-        <Select {...args} />
         <Select {...args} />
     </div>
 </Formik>
@@ -33,4 +32,25 @@ Primary.args = {
             value: 'Wartość 3'
         },
     ]
+}
+
+export const SelectedValue = Template.bind({})
+SelectedValue.args = {
+    name: 'select',
+    label: "Placeholder",
+    options: [
+        {
+            key: 'value_1',
+            value: 'Wartość 1'
+        },
+        {
+            key: 'value_2',
+            value: 'Wartość 2'
+        },
+        {
+            key: 'value_3',
+            value: 'Wartość 3'
+        },
+    ],
+    initialValue: 'value_2'
 }
