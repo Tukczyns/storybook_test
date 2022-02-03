@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, useState } from "react";
+import React, { FC, forwardRef, useEffect, useState } from "react";
 import { DatepickerProps } from "./datepicker.types";
 import DatePicker from 'react-datepicker'
 import { DatepickerButton, DatepickerIcon, DatepickerLabel } from "./datepicker.styles";
@@ -18,9 +18,13 @@ const Datepicker: FC<DatepickerProps> = ({ name, label, disabled }) => {
         setFieldValue(name, date)
     }
 
+    useEffect(() => {
+        if (field.value !== null) setStartDate(new Date(field.value))
+    }, [])
+
     const ExampleCustomInput = forwardRef<any, any>(({ value, onClick }, ref) => (
-        <DatepickerButton type="button" onClick={!disabled && onClick} ref={ref}>
-            {value}
+        <DatepickerButton type="button" onClick={!disabled && onClick} ref={ref} open={startDate !== null}>
+            <span>{value}</span>
             <DatepickerLabel open={startDate !== null}>{label}</DatepickerLabel>
             <DatepickerIcon >
                 <IoIosCalendar />

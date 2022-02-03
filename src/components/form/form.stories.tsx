@@ -33,17 +33,22 @@ export const FormExample: ComponentStory<typeof Form> = (args) => (
             text: '',
             select: 'test',
             textarea: '',
-            date: new Date(),
+            date: null,
             file: null
         }}
         validationSchema={schema}
         onSubmit={async (values) => console.log(values)}
     >
         <Input name="text" label='Text' />
-        <Textarea name="textarea" />
-        <Select name='select' options={['Option 1', 'Option 2', 'Option 3', 'Option 4']} />
+        <Select name='select' label="Select" options={[
+            {
+                key: 'val',
+                value: 'Value 2'
+            }
+        ]} />
+        <Datepicker name="date" label='Data' />
+        <Textarea name="textarea" label='Label' />
         <FileUpload name="file" />
-        <Datepicker name="date" />
         <Checkbox name="agreement" content='Wyrażam zgodę na <a href="#">zgodę</a>' />
         <Button type='submit' text='Wyślij'></Button>
     </Form>

@@ -51,7 +51,6 @@ interface SelectProps {
         value: string;
     }[];
     label?: string;
-    initialValue?: string;
 }
 
 declare const Select: FC<SelectProps>;

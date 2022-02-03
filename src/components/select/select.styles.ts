@@ -10,7 +10,8 @@ export const SelectContainer = styled.div`
 export const SelectActiveItem = styled.div<{ isOpen: boolean, floating: boolean }>`
     width: 100%;
     height: 100%;
-    padding: 0 8px;
+    padding: 0 20px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +19,6 @@ export const SelectActiveItem = styled.div<{ isOpen: boolean, floating: boolean 
     background: ${(props) => props.floating ? '#fff' : '#e2e2e2'};
     border: 1px solid #e2e2e2;
     color: ${({ theme }) => theme.colors.dark};
-    font-weight: 900;
     cursor: pointer;
 
     & svg{
@@ -38,16 +38,16 @@ export const SelectItemList = styled.div<{ isOpen: boolean, count: number }>`
     top: 100%;
     z-index: 20;
     transition: max-height .2s;
-    max-height: ${props => props.isOpen ? 'calc(' + (props.count <= 5 ? props.count : 5) + ' * 43px)' : '0'};
+    max-height: ${props => props.isOpen ? 'calc(' + (props.count <= 5 ? props.count : 5) + ' * 46px)' : '0'};
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.5);
 `
 
 export const SelectItem = styled.div`
     width: 100%;
-    height: 40px;
     background: #e2e2e2;
     color: ${({ theme }) => theme.colors.dark};
-    font-weight: 900;
-    padding: 0 8px;
+    padding: 12px 20px;
+    font-weight: 18px;
     display: flex;
     align-items: center;
     margin-bottom: 1px;
@@ -65,10 +65,11 @@ export const SelectItem = styled.div`
 
 export const SelectLabel = styled.div<{ floating: boolean }>`
     position: absolute;
-    left: 5px;
-    padding: 2px 5px;
     transition: all .2s;
-    top: ${(props) => props.floating ? '0' : '50%'};
+    left: 18px;
+    padding: 0 3px;
+    font-size: ${(props) => props.floating ? '14px' : '18px'};
+    top: ${(props) => props.floating ? '0%' : '50%'};
     background: ${(props) => props.floating ? '#fff' : '#e2e2e2'};
     transform: translateY(-50%);
 `

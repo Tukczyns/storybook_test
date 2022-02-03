@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const DatepickerButton = styled.button`
-    background: white;
-    font-weight: 900;
-    padding: 12px 25px;
+export const DatepickerButton = styled.button<{ open: boolean }>`
+    background: ${(props) => props.open ? '#fff' : '#e2e2e2'};
+    border: 1px solid #e2e2e2;
+    padding: 12px 20px;
+    font-size: 18px;
     border: none;
-    font-size: 19px;
     cursor: pointer;
     position: relative;
     display: flex;
@@ -16,21 +16,25 @@ export const DatepickerButton = styled.button`
     width: 100%;
     margin: 5px 0;
 
+    & span{
+        min-height: 22px;
+    }
+
     & svg{
         font-size: 26px;
     }
 `
 
-export const DatepickerLabel = styled.div<{ open: boolean }>`
+export const DatepickerLabel = styled.label<{ open: boolean }>`
     position: absolute;
-    left: 20px;
     transition: all .2s;
-    font-size: ${(props) => props.open ? '14px' : '19px'};
+    font-size: ${(props) => props.open ? '14px' : '18px'};
     top: ${(props) => props.open ? '0%' : '50%'};
     transform: translateY(-50%);
     pointer-events: none;
-    padding: 2px 5px;;
-    background-color: white;
+    left: 18px;
+    padding: 0 3px;
+    background: ${(props) => props.open ? 'white' : 'transparent'};
 `
 
 export const DatepickerIcon = styled.div`
@@ -39,4 +43,8 @@ export const DatepickerIcon = styled.div`
     font-size: 22px;
     margin-left: 10px;
     box-sizing: border-box;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
 `
