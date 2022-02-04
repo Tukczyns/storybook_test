@@ -38,7 +38,7 @@ export const SelectItemList = styled.div<{ isOpen: boolean, count: number }>`
     top: 100%;
     z-index: 20;
     transition: max-height .2s;
-    max-height: ${props => props.isOpen ? 'calc(' + (props.count <= 5 ? props.count : 5) + ' * 46px)' : '0'};
+    max-height: ${props => props.isOpen ? 'calc(' + (props.count <= 5 ? props.count : 5) + ' * 48px)' : '0'};
     box-shadow: 0 1rem 1rem rgba(0,0,0,.5);
 `
 

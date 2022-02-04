@@ -40,6 +40,7 @@ export const UploadedFiles = styled.div`
     background-color: white;
     border: 3px dashed ${({ theme }) => theme.colors.light};
     padding: 10px 20px;
+    min-height: 90px;
 `
 
 export const UploadedFilesCount = styled.div`

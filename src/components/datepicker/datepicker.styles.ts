@@ -5,7 +5,6 @@ export const DatepickerButton = styled.button<{ open: boolean }>`
     border: 1px solid #e2e2e2;
     padding: 12px 20px;
     font-size: 18px;
-    border: none;
     cursor: pointer;
     position: relative;
     display: flex;

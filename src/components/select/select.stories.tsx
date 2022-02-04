@@ -27,10 +27,6 @@ Primary.args = {
             key: 'value_2',
             value: 'Wartość 2'
         },
-        {
-            key: 'value_3',
-            value: 'Wartość 3'
-        },
     ]
 }
 
