@@ -12,5 +12,8 @@ const Template: Story<FileUploadProps> = (args) => <Formik initialValues={{}} on
 
 export const Primary = Template.bind({})
 Primary.args = {
-    name: 'file'
+    name: 'file',
+    formats: ['.jpg', '.png', '.pdf'],
+    accept: 'image/jpeg, image/png',
+    max_size: 4
 }

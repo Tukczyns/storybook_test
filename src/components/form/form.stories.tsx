@@ -48,7 +48,7 @@ export const FormExample: ComponentStory<typeof Form> = (args) => (
         ]} />
         <Datepicker name="date" label='Data' />
         <Textarea name="textarea" label='Label' />
-        <FileUpload name="file" />
+        <FileUpload name="file" formats={['.jpeg', '.png', '.pdf']} />
         <Checkbox name="agreement" content='Wyrażam zgodę na <a href="#">zgodę</a>' />
         <Button type='submit' text='Wyślij'></Button>
     </Form>

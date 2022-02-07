@@ -60,6 +60,7 @@ interface TextAreaProps {
     label?: string;
     value?: string;
     readonly?: boolean;
+    rows?: string;
 }
 
 declare const Textarea: FC<TextAreaProps>;
@@ -81,6 +82,10 @@ declare const Datepicker: FC<DatepickerProps>;
 
 interface FileUploadProps {
     name: string;
+    text?: string;
+    formats?: string[];
+    max_size?: number;
+    accept?: string;
 }
 
 declare const FileUpload: FC<FileUploadProps>;

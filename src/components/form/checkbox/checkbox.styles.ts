@@ -20,7 +20,7 @@ export const CheckboxStyled = styled(Field)`
         transition: all .2s;
         cursor: pointer;
         padding: 2px;
-        background: ${({ theme }) => theme.colors.gradient};
+        background: ${({ theme }) => theme.colors.light};
 
         & svg{
             opacity: 0;
@@ -43,7 +43,7 @@ export const CheckboxStyled = styled(Field)`
         }
         
         & div{
-            background: ${({ theme }) => theme.colors.gradient};
+            background: ${({ theme }) => theme.colors.light};
         }
     }
 `

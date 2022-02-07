@@ -8,6 +8,9 @@ const themes = [{
     dark: '#2c3e50',
     gradient: 'linear-gradient(to left, #2980b9, #2c3e50)',
     red: '#ff0033'
+  },
+  utils: {
+    border_radius: '10px'
   }
 }, {
   colors: {
@@ -15,6 +18,9 @@ const themes = [{
     dark: '#232526',
     gradient: 'linear-gradient(to right, #232526, #414345)',
     red: '#ff0033'
+  },
+  utils: {
+    border_radius: '10px'
   }
 }];
 addDecorator(withThemesProvider(themes), ThemeProvider);

@@ -7,7 +7,9 @@ export const AccordionContainer = styled.div`
 export const AccordionHeadline = styled.div<{ isOpen: boolean }>`
     width: 100%;
     padding: 14px 20px;
+    margin: 10px 0;
     background: ${({theme}) => theme.colors.light};
+    border-radius: ${({theme}) => theme.utils.border_radius};
     font-weight: 700;
     color: #fff;
     cursor: pointer;

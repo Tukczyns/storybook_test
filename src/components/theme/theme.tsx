@@ -8,6 +8,9 @@ const Theme: FC<ThemeProps> = ({ children, colorPrimary = '#ff512f', colorSecond
             colors: {
                 colorPrimary,
                 colorSecondary
+            },
+            utils: {
+                border_radius: '8px'
             }
         }}>
             {children}

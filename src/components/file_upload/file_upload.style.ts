@@ -21,8 +21,14 @@ export const DNDMessage = styled.div`
         margin-bottom: 0;
         text-align: center;
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-top: 0;
         color: ${({ theme }) => theme.colors.dark};
+
+        &:nth-of-type(2){
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
     }
 
     & svg{
@@ -64,4 +70,10 @@ export const DeleteUploadedFiles = styled.div`
         font-size: 22px;
         margin-left: 5px;
     }
+`
+
+export const MaxFileSizeContainer = styled.div`
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
 `
