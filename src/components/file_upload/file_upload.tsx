@@ -1,13 +1,15 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { useDropzone } from 'react-dropzone'
-import { DeleteUploadedFiles, DNDMessage, FileUploadContainer, MaxFileSizeContainer, UploadedFiles, UploadedFilesCount } from "./file_upload.style";
+import { DeleteUploadedFiles, DNDMessage, FileUploadContainer, MaxFileSizeContainer, UploadedFile, UploadedFiles, UploadedFilesCount, UploadedFilesListContainer } from "./file_upload.style";
 import { FileUploadProps } from "./file_upload.types";
-import { IoMdCloudUpload } from 'react-icons/io'
+import { IoIosArrowDown, IoMdCloudUpload } from 'react-icons/io'
 import { MdCheck, MdOutlineDeleteOutline } from 'react-icons/md'
 import { useField, useFormikContext } from "formik";
 import ErrorMessage from "../error_message/error_message";
 
 const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik lub kliknij tutaj', name, formats, max_size = 8, accept = 'image/jpeg, image/png, application/pdf' }) => {
+    const [listOpen, setListOpen] = useState(false)
+
     const [file, setFile] = useState<File[]>([])
 
     const { setFieldValue } = useFormikContext()
@@ -37,6 +39,12 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
         setFieldValue(name, null)
     }
 
+    const deleteSingleFile = (index: number) => {
+        const filesCopy = [...file]
+        filesCopy.splice(index, 1)
+        setFile(filesCopy)
+    }
+
     return (
         <div>
             <FileUploadContainer {...field} {...getRootProps()}>
@@ -59,25 +67,31 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
             </FileUploadContainer>
             {file.length > 0 &&
                 <FileUploadContainer>
-                    <UploadedFiles>
-                        <UploadedFilesCount>
-                            <MdCheck />
+                    <UploadedFiles onClick={() => setListOpen(!listOpen)}>
+                        <UploadedFilesCount open={listOpen}>
+                            <IoIosArrowDown />
                             Dodano {file.length} plików
                         </UploadedFilesCount>
                         <DeleteUploadedFiles onClick={deleteFiles}>
-                            Usuń
+                            Usuń wszystko
                             <MdOutlineDeleteOutline />
                         </DeleteUploadedFiles>
                     </UploadedFiles>
-                    {/* <div>
-                        {file.map(f => {
-                            return <p>{f.name}</p>
+                    <UploadedFilesListContainer open={listOpen}>
+                        {file.map((f, index) => {
+                            return <UploadedFile>
+                                <a href={URL.createObjectURL(f)} target={'_blank'}>{f.name}</a>
+                                <DeleteUploadedFiles onClick={() => deleteSingleFile(index)}>
+                                    Usuń
+                                    <MdOutlineDeleteOutline />
+                                </DeleteUploadedFiles>
+                            </UploadedFile>
                         })}
-                    </div> */}
+                    </UploadedFilesListContainer>
                 </FileUploadContainer>
             }
             <ErrorMessage name={name} />
-        </div>
+        </div >
     )
 }
 

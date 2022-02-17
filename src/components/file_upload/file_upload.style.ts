@@ -5,7 +5,6 @@ export const FileUploadContainer = styled.div`
     width: 100%;
     border: 3px dashed ${({ theme }) => theme.colors.light};
     padding: 10px 20px;
-    cursor: pointer;
     box-sizing: border-box;
     margin: 5px 0;
 `
@@ -42,9 +41,10 @@ export const UploadedFiles = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 `
 
-export const UploadedFilesCount = styled.div`
+export const UploadedFilesCount = styled.div<{ open: boolean }>`
     display: flex;
     align-items: center;
 
@@ -52,6 +52,8 @@ export const UploadedFilesCount = styled.div`
         font-size: 25px;
         color: ${({ theme }) => theme.colors.light};
         margin-right: 10px;
+        transition: all .2s;
+        transform: ${(props) => props.open ? 'rotate(180deg)' : 'rotate(0)'};
     }
 `
 
@@ -64,6 +66,23 @@ export const DeleteUploadedFiles = styled.div`
     & svg{
         font-size: 22px;
         margin-left: 5px;
+    }
+`
+
+export const UploadedFilesListContainer = styled.div<{ open: boolean }>`
+    width: 100%;
+    overflow: hidden;
+    height: ${(props) => props.open ? 'auto' : '0'};
+`
+
+export const UploadedFile = styled.div`
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & a{
+        color: ${({ theme }) => theme.colors.light};
     }
 `
 
