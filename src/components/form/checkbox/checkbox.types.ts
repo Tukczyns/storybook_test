@@ -1,4 +1,5 @@
-export interface CheckboxProps{
+export interface CheckboxProps {
     name: string,
-    content: string
+    content: string,
+    required?: boolean
 }

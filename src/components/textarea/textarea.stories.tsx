@@ -31,3 +31,10 @@ ReadOnly.args = {
     value: 'Some text here',
     readonly: true
 }
+export const Required = Template.bind({})
+Required.args = {
+    name: 'test',
+    label: 'Read only',
+    value: 'Some text here',
+    required: true
+}

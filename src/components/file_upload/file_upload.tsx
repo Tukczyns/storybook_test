@@ -14,7 +14,6 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
     const [field] = useField(name)
 
     const onDrop = useCallback(acceptedFiles => {
-        console.log(acceptedFiles)
         const MAX_SIZE = max_size * 1048576
         const accepted: File[] = []
         const rejectedCounter = 0
@@ -23,10 +22,15 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
             if (file.size <= MAX_SIZE) accepted.push(file)
         })
         console.log(accepted)
-        setFile(accepted)
-        setFieldValue(name, accepted)
-    }, [])
+        setFile((current) => [...current, ...accepted])
+        const files = [...file, ...accepted]
+        setFieldValue(name, files)
+    }, [file])
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: accept })
+
+    useEffect(() => {
+        if (field.value === null) setFile([])
+    }, [field.value])
 
     const deleteFiles = () => {
         setFile([])
@@ -35,38 +39,42 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
 
     return (
         <div>
-            {!file.length ?
-                <React.Fragment>
-                    <FileUploadContainer {...field} {...getRootProps()}>
-                        <input {...getInputProps()} />
-                        {isDragActive ?
-                            <DNDMessage>
-                                <p>Upuść plik</p>
-                                <IoMdCloudUpload />
-                            </DNDMessage>
-                            :
-                            <DNDMessage>
-                                <p>{text}</p>
-                                {formats && formats.length > 0 && <p>Akceptowane formaty: {formats?.map(f => `${f}; `)}</p>}
-                                <IoMdCloudUpload />
-                                <MaxFileSizeContainer>
-                                    Maksymalny rozmiar pliku: {max_size}mb
-                                </MaxFileSizeContainer>
-                            </DNDMessage>
-                        }
-                    </FileUploadContainer>
-                </React.Fragment>
-                :
-                <UploadedFiles>
-                    <UploadedFilesCount>
-                        <MdCheck />
-                        Dodano {file.length} plików
-                    </UploadedFilesCount>
-                    <DeleteUploadedFiles onClick={deleteFiles}>
-                        Usuń
-                        <MdOutlineDeleteOutline />
-                    </DeleteUploadedFiles>
-                </UploadedFiles>
+            <FileUploadContainer {...field} {...getRootProps()}>
+                <input {...getInputProps()} />
+                {isDragActive ?
+                    <DNDMessage>
+                        <p>Upuść plik</p>
+                        <IoMdCloudUpload />
+                    </DNDMessage>
+                    :
+                    <DNDMessage>
+                        <p>{text}</p>
+                        {formats && formats.length > 0 && <p>Akceptowane formaty: {formats?.map(f => `${f}; `)}</p>}
+                        <IoMdCloudUpload />
+                        <MaxFileSizeContainer>
+                            Maksymalny rozmiar pliku: {max_size}mb
+                        </MaxFileSizeContainer>
+                    </DNDMessage>
+                }
+            </FileUploadContainer>
+            {file.length > 0 &&
+                <FileUploadContainer>
+                    <UploadedFiles>
+                        <UploadedFilesCount>
+                            <MdCheck />
+                            Dodano {file.length} plików
+                        </UploadedFilesCount>
+                        <DeleteUploadedFiles onClick={deleteFiles}>
+                            Usuń
+                            <MdOutlineDeleteOutline />
+                        </DeleteUploadedFiles>
+                    </UploadedFiles>
+                    {/* <div>
+                        {file.map(f => {
+                            return <p>{f.name}</p>
+                        })}
+                    </div> */}
+                </FileUploadContainer>
             }
             <ErrorMessage name={name} />
         </div>

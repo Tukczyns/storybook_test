@@ -16,6 +16,12 @@ Primary.args = {
     label: "Data",
 }
 
+export const Required = Template.bind({})
+Required.args = {
+    name: 'date',
+    label: "Data",
+    required: true
+}
 export const Disabled = Template.bind({})
 Disabled.args = {
     name: 'date',

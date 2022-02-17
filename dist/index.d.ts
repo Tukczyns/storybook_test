@@ -22,6 +22,7 @@ interface InputProps {
     type?: 'text' | 'password' | 'number' | 'email';
     value?: string;
     readonly?: boolean;
+    required?: boolean;
 }
 
 declare const Input: FC<InputProps>;
@@ -51,6 +52,7 @@ interface SelectProps {
         value: string;
     }[];
     label?: string;
+    required?: boolean;
 }
 
 declare const Select: FC<SelectProps>;
@@ -61,6 +63,7 @@ interface TextAreaProps {
     value?: string;
     readonly?: boolean;
     rows?: string;
+    required?: boolean;
 }
 
 declare const Textarea: FC<TextAreaProps>;
@@ -76,6 +79,7 @@ interface DatepickerProps {
     name: string;
     disabled?: boolean;
     label?: string;
+    required?: boolean;
 }
 
 declare const Datepicker: FC<DatepickerProps>;
@@ -101,6 +105,7 @@ declare const Form: FC<FormProps>;
 interface CheckboxProps {
     name: string;
     content: string;
+    required?: boolean;
 }
 
 declare const Checkbox: FC<CheckboxProps>;

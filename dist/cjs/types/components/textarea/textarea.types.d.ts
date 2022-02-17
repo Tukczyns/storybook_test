@@ -4,4 +4,5 @@ export interface TextAreaProps {
     value?: string;
     readonly?: boolean;
     rows?: string;
+    required?: boolean;
 }

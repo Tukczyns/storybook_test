@@ -5,4 +5,5 @@ export interface SelectProps {
         value: string;
     }[];
     label?: string;
+    required?: boolean;
 }

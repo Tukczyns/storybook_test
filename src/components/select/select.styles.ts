@@ -31,7 +31,7 @@ export const SelectActiveItem = styled.div<{ isOpen: boolean, floating: boolean 
 export const SelectItemList = styled.div<{ isOpen: boolean, count: number }>`
     width: 100%;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
     position: absolute;
     background-color: white;
     left: 0;
@@ -72,4 +72,8 @@ export const SelectLabel = styled.div<{ floating: boolean }>`
     top: ${(props) => props.floating ? '0%' : '50%'};
     background: ${(props) => props.floating ? '#fff' : '#e2e2e2'};
     transform: translateY(-50%);
+
+    & span{
+        color: ${({ theme }) => theme.colors.red};
+    }
 `

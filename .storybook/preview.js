@@ -10,7 +10,7 @@ const themes = [{
     red: '#ff0033'
   },
   utils: {
-    border_radius: '10px'
+    border_radius: '20px'
   }
 }, {
   colors: {
@@ -20,7 +20,7 @@ const themes = [{
     red: '#ff0033'
   },
   utils: {
-    border_radius: '10px'
+    border_radius: '20px'
   }
 }];
 addDecorator(withThemesProvider(themes), ThemeProvider);

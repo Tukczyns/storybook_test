@@ -33,6 +33,13 @@ DefaultValue.args = {
     value: 'Default value'
 }
 
+export const Required = Template.bind({})
+Required.args = {
+    label: "Placeholder",
+    name: 'Placeholder',
+    required: true
+}
+
 export const ReadOnly = Template.bind({})
 ReadOnly.args = {
     label: "Placeholder",

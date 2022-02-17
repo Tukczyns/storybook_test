@@ -16,3 +16,9 @@ Primary.args = {
     name: 'test',
     content: "Wyrażam zgodę"
 }
+export const Required = Template.bind({})
+Required.args = {
+    name: 'test',
+    content: "Wyrażam zgodę",
+    required: true
+}

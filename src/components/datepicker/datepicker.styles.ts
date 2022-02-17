@@ -34,6 +34,11 @@ export const DatepickerLabel = styled.label<{ open: boolean }>`
     left: 18px;
     padding: 0 3px;
     background: ${(props) => props.open ? 'white' : 'transparent'};
+
+    
+    & span{
+        color: ${({ theme }) => theme.colors.red};
+    }
 `
 
 export const DatepickerIcon = styled.div`

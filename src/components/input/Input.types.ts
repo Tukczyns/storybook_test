@@ -8,5 +8,6 @@ export interface InputProps {
     min?: number,
     type?: 'text' | 'password' | 'number' | 'email',
     value?: string,
-    readonly?: boolean
+    readonly?: boolean,
+    required?: boolean
 }

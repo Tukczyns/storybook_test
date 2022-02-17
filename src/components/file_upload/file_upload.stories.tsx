@@ -8,7 +8,7 @@ export default {
     component: FileUpload
 } as Meta<typeof FileUpload>
 
-const Template: Story<FileUploadProps> = (args) => <Formik initialValues={{}} onSubmit={() => { }}><FileUpload {...args} /></Formik>
+const Template: Story<FileUploadProps> = (args) => <Formik initialValues={{ file: null }} onSubmit={() => { }}><FileUpload {...args} /></Formik>
 
 export const Primary = Template.bind({})
 Primary.args = {

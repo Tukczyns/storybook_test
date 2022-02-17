@@ -4,7 +4,7 @@ import { SelectActiveItem, SelectContainer, SelectItem, SelectItemList, SelectLa
 import { SelectProps } from "./select.types";
 import { IoIosArrowDown } from 'react-icons/io'
 
-const Select: FC<SelectProps> = ({ name, options, label }) => {
+const Select: FC<SelectProps> = ({ name, options, label, required = false }) => {
     const [openSelect, toggleSelect] = useState(false)
     const [selectedValue, setSelectedValue] = useState('')
 
@@ -28,7 +28,7 @@ const Select: FC<SelectProps> = ({ name, options, label }) => {
     return (
         <SelectContainer {...field}>
             {/* active item */}
-            <SelectLabel floating={selectedValue !== ''}>{label}</SelectLabel>
+            <SelectLabel floating={selectedValue !== ''}>{label}{required && <span>*</span>}</SelectLabel>
             <SelectActiveItem isOpen={openSelect} onClick={() => toggleSelect(!openSelect)} floating={selectedValue !== ''}>
                 <span>{selectedValue}</span>
                 <IoIosArrowDown />

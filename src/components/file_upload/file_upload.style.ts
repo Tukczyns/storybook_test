@@ -39,14 +39,9 @@ export const DNDMessage = styled.div`
 
 export const UploadedFiles = styled.div`
     width: 100%;
-    padding: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    border: 3px dashed ${({ theme }) => theme.colors.light};
-    padding: 10px 20px;
-    min-height: 90px;
 `
 
 export const UploadedFilesCount = styled.div`

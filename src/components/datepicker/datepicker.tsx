@@ -7,7 +7,7 @@ import { useField, useFormikContext } from "formik";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const Datepicker: FC<DatepickerProps> = ({ name, label, disabled }) => {
+const Datepicker: FC<DatepickerProps> = ({ name, label, disabled, required = false }) => {
     const { setFieldValue } = useFormikContext()
     const [field] = useField(name)
 
@@ -25,7 +25,7 @@ const Datepicker: FC<DatepickerProps> = ({ name, label, disabled }) => {
     const ExampleCustomInput = forwardRef<any, any>(({ value, onClick }, ref) => (
         <DatepickerButton type="button" onClick={!disabled && onClick} ref={ref} open={startDate !== null}>
             <span>{value}</span>
-            <DatepickerLabel open={startDate !== null}>{label}</DatepickerLabel>
+            <DatepickerLabel open={startDate !== null}>{label}{required && <span>*</span>}</DatepickerLabel>
             <DatepickerIcon >
                 <IoIosCalendar />
             </DatepickerIcon>
@@ -33,7 +33,7 @@ const Datepicker: FC<DatepickerProps> = ({ name, label, disabled }) => {
     ));
 
     return (
-        <DatePicker {...field} selected={startDate} onChange={(date) => setValue(date)} customInput={<ExampleCustomInput />} />
+        <DatePicker maxDate={new Date()} {...field} selected={startDate} onChange={(date) => setValue(date)} customInput={<ExampleCustomInput />} />
     )
 }
 

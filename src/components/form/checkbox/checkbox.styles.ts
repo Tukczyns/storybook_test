@@ -4,14 +4,15 @@ import styled from "styled-components";
 export const CheckboxContainer = styled.div`
     display: flex;
     margin: 5px 0;
+    border-radius: 5px;
 `
 
 export const CheckboxStyled = styled(Field)`
     display: none;
 
     & + label{
-        width: 25px;
-        height: 25px;
+        width: 27px;
+        height: 27px;
         display: block;
         flex-shrink: 0;
         margin-right: 1rem;
@@ -21,6 +22,7 @@ export const CheckboxStyled = styled(Field)`
         cursor: pointer;
         padding: 2px;
         background: ${({ theme }) => theme.colors.light};
+        border-radius: 5px;
 
         & svg{
             opacity: 0;
@@ -34,6 +36,7 @@ export const CheckboxStyled = styled(Field)`
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 5px;
         }
     }
 
@@ -49,12 +52,16 @@ export const CheckboxStyled = styled(Field)`
 `
 
 export const CheckboxText = styled.span`
-    font-size: 15px;
-    margin-top: 4px;
+    font-size: 16px;
+    margin-top: 1px;
 
     & a{
         color: ${({ theme }) => theme.colors.light};
         text-decoration: none;
         font-weight: 700;
     }
+`
+
+export const CheckboxRequired = styled.span`
+    color: ${({ theme }) => theme.colors.red};
 `

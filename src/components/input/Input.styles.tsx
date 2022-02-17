@@ -39,4 +39,8 @@ export const StyledLabel = styled.label`
     transform: translateY(-50%);
     pointer-events: none;
     transition: all .2s;
+
+    & span{
+        color: ${({ theme }) => theme.colors.red};
+    }
 `

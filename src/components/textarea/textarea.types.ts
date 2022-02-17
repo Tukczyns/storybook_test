@@ -3,5 +3,6 @@ export interface TextAreaProps {
     label?: string,
     value?: string,
     readonly?: boolean,
-    rows?: string
+    rows?: string,
+    required?: boolean
 }
