@@ -110,4 +110,57 @@ interface CheckboxProps {
 
 declare const Checkbox: FC<CheckboxProps>;
 
-export { Accordion, AccordionItem, Button, Checkbox, ColorBoxes, Datepicker, FileUpload, Form, Input, Select, Textarea };
+interface WysiwygProps {
+    initialValue: string;
+    setValue: (arg: string) => void;
+    placeholder: string;
+}
+
+declare const Wysiwyg: FC<WysiwygProps>;
+
+interface SwitchTypes {
+    active: boolean;
+    setActive?: (arg: boolean) => void;
+    readonly?: boolean;
+}
+
+declare const SwitchToggle: FC<SwitchTypes>;
+
+declare const Spinner: FC;
+
+interface SessionBarProps {
+    action: () => void;
+    duration?: number;
+}
+
+declare const SessionRefresh: FC<SessionBarProps>;
+
+interface HtmlRenderProps {
+    html: string;
+}
+
+declare const HtmlRender: FC<HtmlRenderProps>;
+
+interface ConfirmPopupTypes {
+    visible: boolean;
+    message: string;
+    cancel?: Function;
+    accept?: Function;
+}
+
+declare const ConfirmPopup: FC<ConfirmPopupTypes>;
+
+interface AlertItemTypes {
+    id: string;
+    text: string;
+    type: 'error' | 'info' | 'success';
+}
+interface AlertListTypes {
+    alerts: AlertItemTypes[];
+    setAlerts: () => void;
+    removeAlert: (arg: string) => void;
+}
+
+declare const AlertList: FC<AlertListTypes>;
+
+export { Accordion, AccordionItem, AlertList, Button, Checkbox, ColorBoxes, ConfirmPopup, Datepicker, FileUpload, Form, HtmlRender, Input, Select, SessionRefresh as SessionBar, Spinner, SwitchToggle as Switch, Textarea, Wysiwyg };

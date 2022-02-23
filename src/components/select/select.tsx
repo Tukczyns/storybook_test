@@ -36,7 +36,7 @@ const Select: FC<SelectProps> = ({ name, options, label, required = false }) => 
             {/* item list */}
             <SelectItemList isOpen={openSelect} count={options?.length || 0}>
                 {options?.map(o => (
-                    <SelectItem onClick={() => changeValue(o.value, o.key)}>{o.value}</SelectItem>
+                    <SelectItem key={o.key} onClick={() => changeValue(o.value, o.key)}>{o.value}</SelectItem>
                 ))}
             </SelectItemList>
         </SelectContainer >

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Spinner from "../spinner/spinner";
+import Spinner from "./spinner/spinner";
 import { StyledButton } from "./Button.styles";
 import { ButtonProps } from "./Button.types";
 

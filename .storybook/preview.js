@@ -7,7 +7,8 @@ const themes = [{
     light: '#2980b9',
     dark: '#2c3e50',
     gradient: 'linear-gradient(to left, #2980b9, #2c3e50)',
-    red: '#ff0033'
+    red: '#ff0033',
+    green: '#50aa40'
   },
   utils: {
     border_radius: '20px'
@@ -17,7 +18,8 @@ const themes = [{
     light: '#414345',
     dark: '#232526',
     gradient: 'linear-gradient(to right, #232526, #414345)',
-    red: '#ff0033'
+    red: '#ff0033',
+    green: '#50aa40'
   },
   utils: {
     border_radius: '20px'
