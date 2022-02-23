@@ -3,5 +3,6 @@ export interface FileUploadProps {
     text?: string,
     formats?: string[],
     max_size?: number,
-    accept?: string
+    accept?: string,
+    max_number_of_files?: number
 }

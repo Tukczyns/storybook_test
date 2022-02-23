@@ -64,6 +64,7 @@ interface TextAreaProps {
     readonly?: boolean;
     rows?: string;
     required?: boolean;
+    max?: number;
 }
 
 declare const Textarea: FC<TextAreaProps>;
@@ -90,6 +91,7 @@ interface FileUploadProps {
     formats?: string[];
     max_size?: number;
     accept?: string;
+    max_number_of_files?: number;
 }
 
 declare const FileUpload: FC<FileUploadProps>;

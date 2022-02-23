@@ -6,7 +6,7 @@ export const ErrorListContainer = styled.div`
     bottom: 0;
     height: 100vh;
     width: 20rem;
-    z-index: 40;
+    z-index: 550;
     padding: 1rem 0;
     display: flex;
     align-items: center;

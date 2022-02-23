@@ -5,4 +5,5 @@ export interface TextAreaProps {
     readonly?: boolean;
     rows?: string;
     required?: boolean;
+    max?: number;
 }

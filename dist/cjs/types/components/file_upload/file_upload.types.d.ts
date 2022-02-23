@@ -4,4 +4,5 @@ export interface FileUploadProps {
     formats?: string[];
     max_size?: number;
     accept?: string;
+    max_number_of_files?: number;
 }

@@ -23,7 +23,13 @@ const Template: Story<InputProps> = (args) => <Formik initialValues={{}} onSubmi
 export const FloatingLabel = Template.bind({})
 FloatingLabel.args = {
     label: "Placeholder",
-    name: 'Placeholder'
+    name: 'Placeholder',
+}
+export const MaxLength = Template.bind({})
+MaxLength.args = {
+    label: "Placeholder",
+    name: 'Placeholder',
+    max: 100
 }
 
 export const DefaultValue = Template.bind({})

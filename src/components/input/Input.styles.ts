@@ -44,3 +44,12 @@ export const StyledLabel = styled.label`
         color: ${({ theme }) => theme.colors.red};
     }
 `
+
+export const MaxLength = styled.p`
+    font-size: 13px;
+    line-height: 13px;
+    color: #a2a2a2;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding-left: 18px;
+`

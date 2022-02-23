@@ -6,16 +6,14 @@ import AlertItem from './alert_item/alert_item'
 
 const AlertList: FC<AlertListTypes> = ({ alerts, setAlerts, removeAlert }) => {
     return (
-        <div>
-            <ErrorListContainer>
-                {alerts.length > 0 && <ClearAllButton onClick={setAlerts}>
-                    <MdClose />
-                </ClearAllButton>}
-                {alerts && alerts.map(e => {
-                    return <AlertItem key={e.id} {...e} removeAlert={removeAlert} />
-                })}
-            </ErrorListContainer>
-        </div>
+        <ErrorListContainer>
+            {alerts.length > 0 && <ClearAllButton onClick={setAlerts}>
+                <MdClose />
+            </ClearAllButton>}
+            {alerts && alerts.map(e => {
+                return <AlertItem key={e.id} {...e} removeAlert={removeAlert} />
+            })}
+        </ErrorListContainer>
     )
 }
 

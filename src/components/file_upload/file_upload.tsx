@@ -6,8 +6,9 @@ import { IoIosArrowDown, IoMdCloudUpload } from 'react-icons/io'
 import { MdCheck, MdOutlineDeleteOutline } from 'react-icons/md'
 import { useField, useFormikContext } from "formik";
 import ErrorMessage from "../error_message/error_message";
+import { MaxLength } from "../input/Input.styles";
 
-const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik lub kliknij tutaj', name, formats, max_size = 8, accept = 'image/jpeg, image/png, application/pdf' }) => {
+const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik lub kliknij tutaj', name, formats, max_size = 8, accept = 'image/jpeg, image/png, application/pdf', max_number_of_files }) => {
     const [listOpen, setListOpen] = useState(false)
 
     const [file, setFile] = useState<File[]>([])
@@ -16,6 +17,7 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
     const [field] = useField(name)
 
     const onDrop = useCallback(acceptedFiles => {
+        if (max_number_of_files && file.length + acceptedFiles.length >= max_number_of_files) return
         const MAX_SIZE = max_size * 1048576
         const accepted: File[] = []
         const rejectedCounter = 0
@@ -62,6 +64,9 @@ const FileUpload: FC<FileUploadProps> = ({ text = 'Przeciągnij i upuść plik l
                         <MaxFileSizeContainer>
                             Maksymalny rozmiar pliku: {max_size}mb
                         </MaxFileSizeContainer>
+                        {max_number_of_files && <MaxFileSizeContainer>
+                            Maksymalna liczba plików: {max_number_of_files}
+                        </MaxFileSizeContainer>}
                     </DNDMessage>
                 }
             </FileUploadContainer>
